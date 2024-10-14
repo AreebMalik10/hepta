@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './index.css'; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HeptaTravelTours from "./heptaTravelTour";
+import Footer from "./footer";
+import SideMenu from "./components/sidemenu"; 
+import Hotels from "./components/hotels";
+import Aboutus from "./components/aboutus";
+import Gallery from "./components/gallery";
+import Contact from "./components/contact";
+import News from "./components/news";
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+
+        <Route path="/" element={<HeptaTravelTours/>}></Route>
+        <Route path="/SideMenu" element={<SideMenu/>}></Route>
+        <Route path="/hotels" element={<Hotels/>}></Route>
+        <Route path="/aboutus" element={<Aboutus/>}></Route>
+        <Route path="/gallery" element={<Gallery/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/news" element={<News />}></Route>
+
+      </Routes>
+      <Footer/>  
     </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,104 @@
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    display: flex; 
+    justify-content: space-between;
+    padding: 50px !important ;
+    height: auto;
+    gap: -20px;
+
+    
+    
+    
+}
+
+.footer div {
+    margin-top: 100px  !important;
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin-right: 0px ;
+    margin-left: 0px;
+    
+}
+
+.col1, .col2, .col3, .col4 {
+    display: flex;
+    gap: 0px;
+    margin: 0;
+}
+
+.col1 h4, .col2 h4, .col3 h4, .col4 h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left; 
+}
+
+
+.col1, .col2, .col3, .col4 {
+    flex: 1; 
+    text-align: left; 
+}
+
+#btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    text-align: left; 
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+#btn:hover {
+    color: #fff; 
+}
+
+p {
+    margin: 5px 0;
+    text-align: left;
+    color: #6c757d; 
+}
+
+.email{
+    display: flex;
+    align-items: left;
+    
+}
+
+.email input{
+    background: transparent;
+    margin-right: 130px;
+    border: none;
+    margin-top: -80px;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    color: #6c757d;
+    
+}
+
+.send-btn{
+    font-size: 18px;
+}
+
+#youremail{
+    color: white;
+}
+
+#sendbtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    color: #070707;
+    margin-right: 190px;
+    margin-top: -70px;
+  }
+
+  #lastline{
+    border-bottom: 1px solid #ccc
+  }
+  
