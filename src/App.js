@@ -1,8 +1,8 @@
 import React from "react";
 import './index.css'; 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HeptaTravelTours from "./heptaTravelTour";
-import Footer from "./footer";
+import HeptaTravelTours from "./components/heptaTravelTour";
+import Footer from "./components/footer";
 import SideMenu from "./components/sidemenu"; 
 import Hotels from "./components/hotels";
 import Aboutus from "./components/aboutus";
@@ -11,6 +11,7 @@ import Contact from "./components/contact";
 import News from "./components/news";
 
 function App() {
+  
   return (
     <Router>
     <div className="App">

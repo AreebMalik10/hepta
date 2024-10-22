@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Carousel } from 'react-bootstrap';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Card, Container, Row, Col } from 'react-bootstrap';
+import "./css/hotels.css";
 
 const features = [
     { title: "Good Foods", image: "https://preview.colorlib.com/theme/hepta/fonts/flaticon/svg/001-breakfast.svg", description: "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts." },
@@ -27,26 +28,60 @@ const FeatureCard = ({ title, image, description }) => (
 
 
 export default function Hotels() {
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    }
+
     return (
         <>
-            <header className="relative bg-cover bg-center h-screen" style={{ backgroundImage: "url('https://preview.colorlib.com/theme/hepta/images/slider-4.jpg')" }}>
-                <div className="absolute inset-0 bg-black opacity-50"></div>
-                <div className="relative z-10 flex justify-between items-center p-6">
-                    <Link to="/" className='no-underline'>
-                    <h1 className="text-white text-4xl font-bold mt-12">Hepta</h1>
-                    </Link>
-                    <Link to="/SideMenu" className="text-white text-3xl">
-                        <FontAwesomeIcon icon={faBars} />
-                    </Link>
-                </div>
-                <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-                    <h2 className="text-white text-5xl font-bold mb-4">Our Hotel</h2>
-                    <p className="text-white text-lg">A free template by Colorlib. Download and share!</p>
-                </div>
-            </header>
-            <section className="py-16 bg-gray-100">
+            <section className='header'>
+                <header className="relative bg-cover bg-center h-screen sm:h-[50vh] md:h-[60vh] lg:h-[68vh]" style={{ backgroundImage: "url('https://preview.colorlib.com/theme/hepta/images/slider-4.jpg')" }}>
+                    <div className="absolute inset-0 bg-black opacity-50"></div>
+
+                    {/* Navbar */}
+                    <div className="relative z-10 flex justify-between items-center p-6">
+                        <Link to="/" className='no-underline'>
+                            <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold">Hepta</h1>
+                        </Link>
+                        <button className="text-white text-2xl sm:text-3xl" onClick={toggleMenu}>
+                            <FontAwesomeIcon icon={faBars} />
+                        </button>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
+                        <h2 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            Our Hotel
+                        </h2>
+                        <p className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                            A free template by Colorlib. Download and share!
+                        </p>
+                    </div>
+
+                    {/* Conditional rendering for the full-screen menu */}
+                    {menuOpen && (
+                        <div className="fixed inset-0 bg-white flex flex-col justify-center items-center z-20">
+                            <button className="absolute top-5 right-5 text-black text-3xl" onClick={toggleMenu}>
+                                <FontAwesomeIcon icon={faTimes} />
+                            </button>
+                            <ul className="text-center space-y-8 text-black text-3xl">
+                                <li><Link to="/" className="text-teal-500 font-bold no-underline" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "40px" }}>Home</Link></li>
+                                <li><Link to="/hotels" className=" text-[#000000] font-semibold hover:text-[#65c0ba] no-underline" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "40px" }}>Hotels</Link></li>
+                                <li><Link to="/aboutus" className="text-[#000000] font-semibold hover:text-[#65c0ba] no-underline" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "40px" }}>About Us</Link></li>
+                                <li><Link to="/gallery" className="text-[#000000] font-semibold hover:text-[#65c0ba] no-underline" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "40px" }}>Gallery</Link></li>
+                                <li><Link to="/news" className="text-[#000000] font-semibold hover:text-[#65c0ba] no-underline" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "40px" }}>News</Link></li>
+                                <li><Link to="/contact" className="text-[#000000] font-semibold hover:text-[#65c0ba] no-underline" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "40px" }}>Contact</Link></li>
+                            </ul>
+                        </div>
+                    )}
+                </header>
+            </section>
+
+            <section className="py-16 bg-white" data-aos="fade-up" >
                 <div className="container mx-auto">
-                    <h2 className="text-center text-4xl font-bold mb-12">Our Features</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
                             <FeatureCard key={index} {...feature} />
@@ -55,72 +90,73 @@ export default function Hotels() {
                 </div>
             </section>
 
-            <section className="familyroom">
-                <div className="flex flex-col md:flex-row max-w-6xl mx-auto my-12 ">
+            <section className="familyroom" data-aos="fade-up" >
+                <div className="flex flex-col sm:flex-row max-w-6xl mx-auto my-12">
                     {/* Left Column */}
-                    <div className="md:w-1/2 ml-13 "  data-aos="fade-up" data-aos-duration="1000">
+                    <div className="sm:w-1/2 w-full mb-4 sm:mb-0 ml-0 sm:ml-13 -mr-6" data-aos="fade-up" data-aos-duration="1000">
                         <img
                             src="https://preview.colorlib.com/theme/hepta/images/hero_1.jpg"
                             alt="hero1"
-                            className="w-full h-[38rem]  object-cover border"
+                            className="w-full h-[38rem] object-cover border sm:h-[24rem] lg:h-[38rem]"
+                        // Comment: Adjusting image height for smaller screens 
                         />
                     </div>
 
                     {/* Right Column */}
-                    <div className="md:w-2/5 md:pl-8 flex flex-col justify-center ml-14">
-                        <h2 className="text-4xl font-bold mb-4">Family Room</h2>
-                        <p className="text-[#6c757d] mb-4 text-lg -mr-2" style={{ fontFamily: '"Mukta Mahee", Arial, sans-serif' }}>
+                    <div className="sm:w-1/2 sm:pl-8 flex flex-col justify-center w-full ml-10 mr-1">
+                        <h2
+                            className="text-4xl font-bold mb-4 sm:text-2xl lg:text-4xl"
+                            style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            Family Room
+                        </h2>
+                        <p
+                            className="text-[#6c757d] mb-4 text-lg sm:text-base lg:text-lg mr-10"
+                            style={{ fontFamily: '"Mukta Mahee", Arial, sans-serif' }}>
                             Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarks grove right at the coast of the Semantics, a large language ocean.
                         </p>
-                        <p className="text-[#6c757d] mb-8 text-lg">
+                        <p className="text-[#6c757d] mb-8 text-lg sm:text-base lg:text-lg mr-16" style={{ fontFamily: '"Mukta Mahee", Arial, sans-serif' }}>
                             A small river named Duden flows by their place and supplies it with the necessary regalia.
                         </p>
-                        <button className="border-2 border-teal-400 text-black-400 h-12 w-48 px-6 py-2  rounded hover:bg-teal-400 hover:text-white transition-colors duration-300">
+                        <button className="border-2 border-teal-400 text-black-400 h-12 w-48 px-6 py-2 rounded hover:bg-teal-400 hover:text-white transition-colors duration-300 ml-0 sm:ml-0">
                             LEARN MORE
                         </button>
-
-
                     </div>
                 </div>
             </section>
 
 
-            {/*left Column */}
-            <section className='presidentialRoom'>
-
-                <div className="flex flex-col md:flex-row max-w-7xl mx-auto p-8 -mt-20">
-                    <div className="md:w-2/5 flex flex-col justify-center mr-24">
-                        <h2 className="text-4xl font-bold mb-4 ml-24" >Presidential Room</h2>
-                        <p className="text-[#6c757d] mb-4 text-lg font-mukta ml-24 -mr-12">
+            <section className='presidentialRoom' data-aos="fade-up">
+                <div className="flex flex-col sm:flex-row max-w-7xl mx-auto p-8 mt-24 sm:mt-[-6.5rem]">
+                    <div className="sm:w-2/5 flex flex-col justify-center w-full mb-4 sm:mb-0 mr-0 sm:mr-24 -ml-6 ">
+                        <h2 className="text-4xl font-bold mb-4 ml-0 sm:ml-24" style={{ fontFamily: "Abril Fatface, times, serif" }}>Presidential Room</h2>
+                        <p className="text-[#6c757d] mb-4 text-lg font-mukta ml-0 sm:ml-24 -mr-12">
                             Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarks grove right at the coast of the Semantics, a large language ocean.
                         </p>
-                        <p className="text-[#6c757d] mb-8 text-lg font-mukta ml-24">
+                        <p className="text-[#6c757d] mb-8 text-lg font-mukta ml-0 sm:ml-24">
                             A small river named Duden flows by their place and supplies it with the necessary regeliaria.
                         </p>
-                        <button className="border-2 border-teal-400 text-black-400 h-12 w-48 px-6 py-2  rounded hover:bg-teal-400 hover:text-white transition-colors duration-300 ml-24">
+                        <button className="border-2 border-teal-400 text-black-400 h-12 w-48 px-6 py-2 rounded hover:bg-teal-400 hover:text-white transition-colors duration-300 ml-0 sm:ml-24">
                             LEARN MORE
                         </button>
                     </div>
 
                     {/* Right Column */}
-                    <div className="md:w-1/2 mt-8 md:mt-0 ml-6">
+                    <div className="sm:w-1/2 mt-8 sm:mt-0 -ml-4 sm:ml-10 w-full">
                         <img
                             src="https://preview.colorlib.com/theme/hepta/images/hero_2.jpg"
                             alt="hero 2"
                             className="w-full h-[38rem] object-cover border"
                         />
                     </div>
-
                 </div>
-
-
             </section>
 
-            <section className='hotGallery'>
+
+            <section className='hotGallery' data-aos="fade-up">
 
                 <div className="text-center py-16 bg-white">
                     <div className="container mx-auto">
-                        <h2 className="text-5xl font-bold mt-8 mb-4" style={{fontFamily:"Abril Fatface, times, serif"}}>Hotel Gallery</h2>
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 mt-28" style={{ fontFamily: "Abril Fatface, times, serif" }}>Hotel Gallery</h2>
 
                         <p className="text-gray-500 text-lg max-w-3xl mx-auto">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto doloremque quo
@@ -134,7 +170,7 @@ export default function Hotels() {
             </section>
 
 
-            <section className='slider'>
+            <section className='slider' data-aos="fade-up">
 
                 <div className='content2'>
                     <Carousel
@@ -175,68 +211,74 @@ export default function Hotels() {
 
             </section>
 
-            <section className='hotGallery'>
-
-                <div className="text-center py-16 bg-white mt-36">
-                    <div className="container mx-auto">
-                        <h2 className="text-5xl font-bold mb-4">More Hotel Features</h2>
-
-                        <p className="text-gray-500 text-lg max-w-3xl mx-auto">
+            <section className='hotelfeature' data-aos="fade-up">
+                <div className="text-center py-16 bg-white mt-16 sm:mt-24 md:mt-36">
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            More Hotel Features
+                        </h2>
+                        <p className="text-gray-500 text-base sm:text-lg max-w-3xl mx-auto">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto doloremque quo odio repudiandae sunt eveniet? Enim facilis laborum voluptate id porro, culpa maiores quis, blanditiis laboriosam alias. Sed.
                         </p>
                     </div>
                 </div>
-
-
             </section>
 
-            <section className="cards">
-                <div className="flex flex-col items-center justify-center h-screen -mt-16 -mb-40">
-                    <div className="grid grid-cols-3 gap-8 -mt-60">
-                        <div className="bg-white shadow-md rounded-lg pb-6 w-[350px] h-[400px] ml-64">
+            <section className="bg-white-100 py-10 mb-28" data-aos="fade-up">
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Card 1 */}
+                        <div className="bg-white shadow-lg  overflow-hidden">
                             <img
                                 src="https://preview.colorlib.com/theme/hepta/images/img_1.jpg"
-                                alt="image 1"
-                                className="w-full h-[280px] object-cover rounded-t-lg" 
+                                alt="Drink"
+                                className="w-full h-64 object-cover"
                             />
-                            <Link to="/" className="block text-xl font-bold text-gray-900 mt-4 hover:text-green-500 transition-colors duration-300 no-underline" >
-                                <h1 className="text-2xl font-bold text-gray-900 mt-4 text-left hover:text-[#65c0ba] ml-10 " style={{ fontFamily: '"Abril Fatface", times, serif' }}>
-                                    Five Reasons to Stay at Villa Resort
-                                </h1>
-                            </Link>
+                            <div className="p-5">
+                                <Link to="/hotels" className='no-underline'>
+                                    <h2 className="  text-3xl font-bold text-left text-[#000000] hover:text-[#65c0ba] mb-4" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                                        Five Reasons to Stay at Villa Resort
+                                    </h2>
+                                </Link>
+                            </div>
                         </div>
 
-                        <div className="bg-white shadow-md rounded-lg pb-6 w-[350px] h-[400px] ml-116">
+                        {/* Card 2 */}
+                        <div className="bg-white shadow-lg  overflow-hidden">
                             <img
                                 src="https://preview.colorlib.com/theme/hepta/images/img_2.jpg"
-                                alt="image 2"
-                                className="w-full h-[280px] object-cover rounded-t-lg"
+                                alt="Surfing"
+                                className="w-full h-64 object-cover"
                             />
-                            <Link to="/" className="block text-xl font-bold text-gray-900 mt-4 hover:text-green-500 transition-colors duration-300 no-underline" >
-                                <h1 className="text-2xl font-bold text-gray-900 mt-4 text-left hover:text-[#65c0ba] ml-10" style={{ fontFamily: '"Abril Fatface", times, serif' }}>
-                                    Five Reasons to Stay at Villa Resort
-                                </h1>
-                            </Link>
+                            <div className="p-5">
+                                <Link to="/hotels" className='no-underline'>
+                                    <h2 className="text-3xl font-bold text-left text-[#000000] hover:text-[#65c0ba] mb-4" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                                        Five Reasons to Stay at Villa Resort
+                                    </h2>
+                                </Link>
+                            </div>
                         </div>
 
-                        <div className="bg-white shadow-md rounded-lg pb-6 w-[350px] h-[400px] ml-168">
+                        {/* Card 3 */}
+                        <div className="bg-white shadow-lg  overflow-hidden">
                             <img
                                 src="https://preview.colorlib.com/theme/hepta/images/img_3.jpg"
-                                alt="image 3"
-                                className="w-full h-[280px] object-cover rounded-t-lg"
+                                alt="Living Room"
+                                className="w-full h-64 object-cover"
                             />
-                            <Link
-                                to="/"
-                                className="block text-xl font-bold text-gray-900 mt-4 transition-colors duration-300 no-underline"
-                            >
-                                <h1 className="text-2xl font-bold text-gray-900 mt-4 text-left hover:text-[#65c0ba] ml-10" style={{ fontFamily: '"Abril Fatface", times, serif' }}>
-                                    Five Reasons to Stay at Villa Resort
-                                </h1>
-                            </Link>
+                            <div className="p-5">
+                                <Link to="/hotels" className='no-underline'>
+                                    <h2 className="text-3xl font-bold text-left text-[#000000] hover:text-[#65c0ba] mb-4" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                                        Five Reasons to Stay at Villa Resort
+                                    </h2>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+
 
 
 

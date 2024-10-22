@@ -37,6 +37,9 @@ module.exports = {
         '256': '64rem',
         '320': '80rem',
       },
+      margin: {
+        '26': '6.5rem',  // Custom margin class for mt-26
+      },
       colors: {
         customTeal: '#65c0ba',
       },

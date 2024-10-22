@@ -1,0 +1,23 @@
+/* Default styles for larger screens */
+.slider {
+    margin-top: 50px; 
+    margin-bottom: 50px;
+}
+
+/* Media query for mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .slider {
+        margin-top: -250px; 
+    }
+}
+
+.team {
+    margin-top: 40px; 
+}
+
+/* Media query for mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .team {
+        margin-top: -350px; 
+    }
+}
