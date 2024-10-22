@@ -100,7 +100,7 @@ function HeptaTravelTours() {
           {/* Navbar Section */}
           <div className="relative z-10 flex justify-between items-center p-6">
             <Link to="/" className='no-underline'>
-              <h1 className="text-white text-3xl font-bold sm:text-3xl md:text-5xl">Hepta</h1>
+              <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold " style={{ fontFamily: "Abril Fatface, times, serif" }}>Hepta</h1>
             </Link>
             <button className="text-white text-2xl sm:text-3xl md:text-2xl" onClick={toggleMenu}>
               <FontAwesomeIcon icon={faBars} />
@@ -109,13 +109,13 @@ function HeptaTravelTours() {
 
           {/* Main Text Section */}
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-            <h2 className="text-white text-4xl font-bold mb-4 sm:text-8xl md:text-8xl" style={{ fontFamily: "Mukta Mahee, arial, sans-serif" }}>
+            <h2 className="text-white text-4xl font-bold mb-4 sm:text-8xl md:text-8xl" style={{ fontFamily: "Abril Fatface, times, serif" }}>
               Travel & Tours
             </h2>
-            <p className="text-white text-xl sm:text-3xl md:text-3xl">A free template by Colorlib. Download and share!</p>
+            <p className="text-white text-xl sm:text-3xl md:text-3xl" style={{fontFamily:"Mukta Mahee, arial, sans-serif"}}>A free template by Colorlib. Download and share!</p>
 
             {/* Button */}
-            <button className="border-2 border-white text-white h-16 w-48 px-6 py-2 rounded hover:bg-white hover:!text-black transition-colors duration-300 ml-0 sm:ml-0 mt-10">
+            <button className="border-2 border-white text-white h-16 w-48 px-6 py-2  hover:bg-white hover:!text-black transition-colors duration-300 ml-0 sm:ml-0 mt-10" style={{fontFamily:"Mukta Mahee, arial, sans-serif", lineHeight:1.8, letterSpacing: "0.06em"}}>
               VISIT COLORLIB
             </button>
 
@@ -182,7 +182,7 @@ function HeptaTravelTours() {
 
 
       <div className='part3' data-aos="fade-down">
-        <h1>Experience Once in Your Life Time</h1>
+        <h1 style={{ fontFamily: "Abril Fatface, times, serif" }}>Experience Once in Your Life Time</h1>
         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
       </div>
       <section className="py-16 bg-white" data-aos="fade-up" >

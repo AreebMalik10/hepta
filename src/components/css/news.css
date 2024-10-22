@@ -1,6 +1,12 @@
-/* In your global CSS or a specific CSS file */
-body {
+/* Add this to your CSS file */
+html, body {
     overflow-x: hidden; 
 }
 
+.container {
+    max-width: 100%; 
+    padding: 0 15px; 
+}
 
+
+  

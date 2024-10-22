@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -29,6 +29,8 @@ export default function News() {
 
     ];
 
+
+
     return (
         <>
             <section className='header'>
@@ -38,7 +40,7 @@ export default function News() {
                     {/* Navbar */}
                     <div className="relative z-10 flex justify-between items-center p-6">
                         <Link to="/" className='no-underline'>
-                            <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold">Hepta</h1>
+                            <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold" style={{ fontFamily: "Abril Fatface, times, serif" }}>Hepta</h1>
                         </Link>
                         <button className="text-white text-2xl sm:text-3xl" onClick={toggleMenu}>
                             <FontAwesomeIcon icon={faBars} />
@@ -55,8 +57,8 @@ export default function News() {
                         </p>
                     </div>
 
-                     {/* Conditional rendering for the full-screen menu */}
-                     {menuOpen && (
+                    {/* Conditional rendering for the full-screen menu */}
+                    {menuOpen && (
                         <div className="fixed inset-0 bg-white flex flex-col justify-center items-center z-20">
                             <button className="absolute top-5 right-5 text-black text-3xl" onClick={toggleMenu}>
                                 <FontAwesomeIcon icon={faTimes} />
@@ -297,14 +299,14 @@ export default function News() {
 
             </section>
 
-            <div className="flex items-center justify-left space-x-2 mb-20 ml-52">
-                <button className="flex items-center justify-center w-12 h-12 rounded-full bg-[#65c0ba] text-white shadow-lg">
+            <div className="flex items-center justify-start space-x-2 sm:space-x-4 mb-20 ml-10 sm:ml-52 md:ml-20 mt-10">
+                <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#65c0ba] text-white shadow-lg">
                     1
                 </button>
-                <button className="flex items-center justify-center w-12 h-12 rounded-full text-[#65c0ba] hover:bg-gray-200">
+                <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full text-[#65c0ba] hover:bg-gray-200">
                     2
                 </button>
-                <button className="flex items-center justify-center w-12 h-12 rounded-full text-[#65c0ba] hover:bg-gray-200">
+                <button className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full text-[#65c0ba] hover:bg-gray-200">
                     3
                 </button>
             </div>

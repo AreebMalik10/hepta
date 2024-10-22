@@ -10,15 +10,14 @@
     }
 
     .familyroom h2{
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        margin-left: -80px !important;
         text-align: center;
         font-size: 1.8rem;
     }
 
 
     .presidentialRoom h2 {
-        margin-left: 110px !important;
+        margin-left: 60px !important;
         margin-right: -50px !important;
         margin-top: 60px;
         text-align: center;
@@ -27,20 +26,20 @@
 
     .familyroom p{
         text-align: center;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        margin-left: -50px !important;
+        margin-right: 20px!important;
         font-size: 1rem; 
     }
 
     .presidentialRoom p {
         text-align: center;
-        margin-left: 50px !important;
-        margin-right: -130px !important;
+        margin-left: 10px !important;
+        margin-right: -110px !important;
         font-size: 1rem; /* Font size for tablet */
     }
 
     .familyroom button {
-        margin-left: 0 !important;
+        margin-left: -40px !important;
         margin-right: 0 !important;
         width: 50%; /* Adjust button width */
         text-align: center;
@@ -48,13 +47,13 @@
 
     .presidentialRoom button {
         width: 63%; /* Adjust button width */
-        margin-left: 170px !important;
+        margin-left: 150px !important;
         text-align: center;
     }
 
     .familyroom img {
         width: 90% !important; /* Expand image width */
-        margin-left: 40px; /* Center image */
+        margin-left: 10px; /* Center image */
         margin-right: 0;
         height: auto; /* Maintain aspect ratio */
     }
@@ -62,7 +61,7 @@
     .presidentialRoom img {
         width: 100% !important; /* Expand image width */
         height: auto; /* Maintain aspect ratio */
-        margin-left: 0px; /* Center image */
+        margin-left: -20px; /* Center image */
         margin-right: 0;
     }
 }
@@ -84,12 +83,13 @@
 
     .familyroom p{
         font-size: 1rem;
-        margin-right: 35px !important;
+        margin-right: 38px !important;
+        margin-left: 10px !important;
     }
     .presidentialRoom p {
         font-size: 1rem; /* Smaller paragraph text for mobile */
-        margin-left: 0px !important;
-        margin-right: -10px !important;
+        margin-left: 10px !important;
+        margin-right: -15px !important;
     }
 
     .familyroom img{
@@ -115,7 +115,7 @@
         margin: 1rem auto;
         text-align: center;
         margin-top: 20px !important;
-        margin-left: 55px !important;
+        margin-left: 63px !important;
     }
 }
 

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -20,7 +20,7 @@ export default function Contact() {
                     {/* Navbar */}
                     <div className="relative z-10 flex justify-between items-center p-6">
                         <Link to="/" className='no-underline'>
-                            <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold">Hepta</h1>
+                            <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold" style={{ fontFamily: "Abril Fatface, times, serif" }}>Hepta</h1>
                         </Link>
                         <button className="text-white text-2xl sm:text-3xl" onClick={toggleMenu}>
                             <FontAwesomeIcon icon={faBars} />
@@ -58,18 +58,17 @@ export default function Contact() {
             </section>
 
             <section className='form' data-aos="fade-up">
-                <div className="flex flex-col md:flex-row justify-center items-center min-h-screen bg-white mt-16 md:mt-32">
-
+                <div className="flex flex-col md:flex-col lg:flex-row justify-center items-center min-h-screen bg-white mt-16 md:mt-16 lg:mt-32">
                     {/* Form Container */}
-                    <div className="w-[90%] sm:w-[70%] md:w-[50%] h-auto md:h-[700px] bg-white p-6 md:p-8 shadow-lg rounded-lg mr-0 md:ml-32">
+                    <div className="w-[90%] sm:w-[70%] md:w-[90%] lg:w-[50%] h-auto lg:h-[700px] bg-white p-6 md:p-6 lg:p-8 shadow-lg rounded-lg md:mb-6 lg:ml-32">
                         <form className="space-y-4">
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <div className="w-full sm:w-1/2">
-                                    <label htmlFor="name" className=" block text-gray-700">Name</label>
+                                    <label htmlFor="name" className="block text-gray-700">Name</label>
                                     <input
                                         type="text"
                                         id="name"
-                                        className="mt-1 w-full sm:w-[90%] md:w-[70%] h-[50px] md:h-[60px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
+                                        className="mt-1 w-full sm:w-[90%] md:w-[80%] lg:w-[70%] h-[50px] md:h-[55px] lg:h-[60px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
                                     />
                                 </div>
                                 <div className="w-full sm:w-1/2">
@@ -77,7 +76,7 @@ export default function Contact() {
                                     <input
                                         type="text"
                                         id="phone"
-                                        className="mt-1 w-full sm:w-[90%] md:w-[70%] h-[50px] md:h-[60px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
+                                        className="mt-1 w-full sm:w-[90%] md:w-[80%] lg:w-[70%] h-[50px] md:h-[55px] lg:h-[60px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
                                     />
                                 </div>
                             </div>
@@ -87,7 +86,7 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     id="email"
-                                    className="mt-1 w-full sm:w-[90%] md:w-[86%] h-[50px] md:h-[60px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
+                                    className="mt-1 w-full sm:w-[90%] md:w-[90%] lg:w-[86%] h-[50px] md:h-[55px] lg:h-[60px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
                                 />
                             </div>
 
@@ -96,29 +95,38 @@ export default function Contact() {
                                 <textarea
                                     id="message"
                                     rows="4"
-                                    className="mt-1 w-full sm:w-[90%] md:w-[86%] h-[150px] md:h-[200px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
+                                    className="mt-1 w-full sm:w-[90%] md:w-[90%] lg:w-[86%] h-[150px] md:h-[180px] lg:h-[200px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#65c0ba]"
                                 ></textarea>
                             </div>
 
-                            <button className="w-full sm:w-[50%] md:w-[25%] h-[50px] md:h-[60px] border-2 border-teal-400 text-black-400 px-6 py-2 rounded hover:bg-teal-400 hover:text-white transition-colors duration-300">
-                                LEARN MORE
+                            <button className="border-2 border-teal-400 text-black-400 h-12 w-48 px-6 py-2 rounded hover:bg-teal-400 hover:text-white transition-colors duration-300">
+                                Send Message
                             </button>
                         </form>
                     </div>
 
                     {/* Address Container */}
-                    <div className="w-[90%] sm:w-[70%] md:w-[35%] h-auto md:h-[700px] bg-transparent p-6 md:p-8 shadow-none rounded-lg mt-10 md:mt-0 md:ml-16">
+                    <div className="w-[90%] sm:w-[70%] md:w-[90%] lg:w-[35%] h-auto lg:h-[700px] bg-transparent p-6 md:p-6 lg:p-8 shadow-none rounded-lg mt-16 mb-20 md:mt-6 lg:-mt-44 lg:ml-16">
                         <h3 className="text-[#65c0ba] uppercase text-xs tracking-wide" style={{ fontFamily: "Mukta Mahee, arial, sans-serif", fontSize: "16px" }}>Address:</h3>
-                        <p className="font-bold mt-3" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "24px", md: "30px" }}>98 West 21th Street, Suite</p>
-                        <p className="font-bold mb-10" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "24px", md: "30px" }}>721 New York NY 10016</p>
-
+                        <p className="font-bold mt-3 text-[28px] md:text-[25px] lg:text-[35px]" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            98 West 21th Street, Suite
+                        </p>
+                        <p className="font-bold mb-10 text-[28px] md:text-[25px] lg:text-[35px]" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            721 New York NY 10016
+                        </p>
                         <h3 className="text-[#65c0ba] uppercase text-xs tracking-wide" style={{ fontFamily: "Mukta Mahee, arial, sans-serif", fontSize: "16px" }}>Phone:</h3>
-                        <p className="text-lg md:text-xl font-semibold mb-10 mt-3" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "24px", md: "30px" }}>(+1) 435 3533</p>
+                        <p className="text-[30px] md:text-[25px] lg:text-[30px] font-semibold mb-10 mt-3" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            (+1) 435 3533
+                        </p>
 
                         <h3 className="text-[#65c0ba] uppercase text-xs tracking-wide" style={{ fontFamily: "Mukta Mahee, arial, sans-serif", fontSize: "16px" }}>Email:</h3>
-                        <p className="text-lg md:text-xl font-semibold mt-3" style={{ fontFamily: "Abril Fatface, times, serif", fontSize: "24px", md: "30px" }}>info@yourdomain.com</p>
+                        <p className="text-[30px] md:text-[25px] lg:text-[30px] font-semibold mt-3" style={{ fontFamily: "Abril Fatface, times, serif" }}>
+                            info@yourdomain.com
+                        </p>
                     </div>
                 </div>
+
+
             </section>
 
 

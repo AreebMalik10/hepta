@@ -127,7 +127,7 @@
 
   .watchButton {
     padding: 5px 10px; 
-    margin-left: 0px !important;
+    margin-left: 50px !important;
   }
 
   .icon-circle {
@@ -409,7 +409,7 @@
   width: 100%;
   height: 77%;
   background-color: #65c0ba; 
-  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%); 
+  clip-path: polygon(0 8%, 100% 0%, 100% 100%, 0 100%); 
   z-index: -1; 
 }
 

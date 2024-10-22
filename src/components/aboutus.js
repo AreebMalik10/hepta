@@ -59,7 +59,7 @@ export default function Aboutus() {
                     {/* Navbar */}
                     <div className="relative z-10 flex justify-between items-center p-6">
                         <Link to="/" className='no-underline'>
-                            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold">Hepta</h1>
+                            <h1 className="text-white text-2xl sm:text-2xl md:text-4xl font-semibold" style={{ fontFamily: "Abril Fatface, times, serif" }}>Hepta</h1>
                         </Link>
                         <button className="text-white text-2xl sm:text-3xl" onClick={toggleMenu}>
                             <FontAwesomeIcon icon={faBars} />
